@@ -1,66 +1,38 @@
-{"test" :
-   {
-      "Body" : {
-         "Data" : {
-            "DAY_ENERGY" : {
-               "Unit" : "Wh",
-               "Value" : 1183.0999999999999
-            },
-            "DeviceStatus" : {
-               "ErrorCode" : 0,
-               "LEDColor" : 2,
-               "LEDState" : 0,
-               "MgmtTimerRemainingTime" : -1,
-               "StateToReset" : false,
-               "StatusCode" : 7
-            },
-            "FAC" : {
-               "Unit" : "Hz",
-               "Value" : 49.979999999999997
-            },
-            "IAC" : {
-               "Unit" : "A",
-               "Value" : 
-            },
-            "IDC" : {
-               "Unit" : "A",
-               "Value" : 6.9199999999999999
-            },
-            "PAC" : {
-               "Unit" : "W",
-               "Value" : 1304
-            },
-            "TOTAL_ENERGY" : {
-               "Unit" : "Wh",
-               "Value" : 12549250
-            },
-            "UAC" : {
-               "Unit" : "V",
-               "Value" : 229.80000000000001
-            },
-            "UDC" : {
-               "Unit" : "V",
-               "Value" : 227.59999999999999
-            },
-            "YEAR_ENERGY" : {
-               "Unit" : "Wh",
-               "Value" : 2289530.75
+{
+   "Body" : {
+      "Data" : {
+         "Inverters" : {
+            "1" : {
+               "DT" : 76,
+               "E_Day" : 20372,
+               "E_Total" : 9561240,
+               "E_Year" : 5230560.5,
+               "P" : 0
             }
-         }
-      },
-      "Head" : {
-         "RequestArguments" : {
-            "DataCollection" : "CommonInverterData",
-            "DeviceClass" : "Inverter",
-            "DeviceId" : "1",
-            "Scope" : "Device"
          },
-         "Status" : {
-            "Code" : 0,
-            "Reason" : "",
-            "UserMessage" : ""
+         "Site" : {
+            "E_Day" : 20372,
+            "E_Total" : 9561240,
+            "E_Year" : 5230560.5,
+            "Meter_Location" : "unknown",
+            "Mode" : "produce-only",
+            "P_Akku" : null,
+            "P_Grid" : null,
+            "P_Load" : null,
+            "P_PV" : 0,
+            "rel_Autonomy" : null,
+            "rel_SelfConsumption" : null
          },
-         "Timestamp" : "2019-07-08T11:02:46+12:00"
+         "Version" : "11"
       }
+   },
+   "Head" : {
+      "RequestArguments" : {},
+      "Status" : {
+         "Code" : 0,
+         "Reason" : "",
+         "UserMessage" : ""
+      },
+      "Timestamp" : "2019-07-07T17:03:59+10:00"
    }
 }
