@@ -1,38 +1,30 @@
 {
-   "Body" : {
-      "Data" : {
-         "Inverters" : {
-            "1" : {
-               "DT" : 76,
-               "E_Day" : 20372,
-               "E_Total" : 9561240,
-               "E_Year" : 5230560.5,
-               "P" : 0
-            }
-         },
-         "Site" : {
-            "E_Day" : 20372,
-            "E_Total" : 9561240,
-            "E_Year" : 5230560.5,
-            "Meter_Location" : "unknown",
-            "Mode" : "produce-only",
-            "P_Akku" : null,
-            "P_Grid" : null,
-            "P_Load" : null,
-            "P_PV" : 0,
-            "rel_Autonomy" : null,
-            "rel_SelfConsumption" : null
-         },
-         "Version" : "11"
-      }
-   },
-   "Head" : {
-      "RequestArguments" : {},
-      "Status" : {
-         "Code" : 0,
-         "Reason" : "",
-         "UserMessage" : ""
-      },
-      "Timestamp" : "2019-07-07T17:03:59+10:00"
-   }
+"Data" : {
+"PAC" : {
+"Unit" : "W",
+"Values" : {
+"0" : 4330,
+"1" : 3721
+}
+},
+"DAY_ENERGY" : {
+"Unit" : "Wh",
+"Values" : {
+"0" : 6366,
+"1" : 6000
+}
+},
+"YEAR_ENERGY" : {
+"Unit" : "Wh",
+"Values" : {
+"0" : 1041607 ,
+"1" : 42000
+}
+},
+"TOTAL_ENERGY" : {
+"Unit" : "Wh",
+"Values" : {
+"0" : 3551131 ,
+"1" : 43000
+}
 }
