@@ -1,12 +1,13 @@
 {
-"Data" : {
-"PAC" : {
-"Unit" : "W",
-"Values" : {
-"0" : 4330,
-"1" : 3721
-}
-},
+   "Body" : {
+      "Data" : {
+        "PAC" : {
+          "Unit" : "W",
+          "Values" : {
+            "0" : 4330,
+            "1" : 3721
+           }
+        },
 "DAY_ENERGY" : {
 "Unit" : "Wh",
 "Values" : {
@@ -27,4 +28,14 @@
 "0" : 3551131 ,
 "1" : 43000
 }
+   },
+   "Head" : {
+      "RequestArguments" : {},
+      "Status" : {
+         "Code" : 0,
+         "Reason" : "",
+         "UserMessage" : ""
+      },
+      "Timestamp" : "2019-07-07T17:03:59+10:00"
+   }
 }
