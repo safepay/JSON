@@ -1,45 +1,111 @@
 {
-   "Body":{
-      "Data":{
-         "PAC":{
-            "Unit":"W",
-            "Values":{
-               "0":4330,
-               "1":3721
-            }
-         },
-         "DAY_ENERGY":{
-            "Unit":"Wh",
-            "Values":{
-               "0":6366,
-               "1":6000
-            }
-         },
-         "YEAR_ENERGY":{
-            "Unit":"Wh",
-            "Values":{
-               "0":1041607,
-               "1":42000
-            }
-         },
-         "TOTAL_ENERGY":{
-            "Unit":"Wh",
-            "Values":{
-               "0":3551131,
-               "1":43000
-            }
-         }
-      }
-   },
-   "Head":{
-      "RequestArguments":{
+	"System": {
+		"Body": {
+			"Data": {
+				"DAY_ENERGY": {
+					"Unit": "Wh",
+					"Value": 1183.0999999999999
+				},
+				"DeviceStatus": {
+					"ErrorCode": 0,
+					"LEDColor": 2,
+					"LEDState": 0,
+					"MgmtTimerRemainingTime": -1,
+					"StateToReset": false,
+					"StatusCode": 7
+				},
+				"FAC": {
+					"Unit": "Hz",
+					"Value": 49.979999999999997
+				},
+				"IAC": {
+					"Unit": "A",
+					"Value": 5.6799999999999997
+				},
+				"IDC": {
+					"Unit": "A",
+					"Value": 6.9199999999999999
+				},
+				"PAC": {
+					"Unit": "W",
+					"Value": 1304
+				},
+				"TOTAL_ENERGY": {
+					"Unit": "Wh",
+					"Value": 12549250
+				},
+				"UAC": {
+					"Unit": "V",
+					"Value": 229.80000000000001
+				},
+				"UDC": {
+					"Unit": "V",
+					"Value": 227.59999999999999
+				},
+				"YEAR_ENERGY": {
+					"Unit": "Wh",
+					"Value": 2289530.75
+				}
+			}
+		},
+		"Head": {
+			"RequestArguments": {
+				"DataCollection": "CommonInverterData",
+				"DeviceClass": "Inverter",
+				"DeviceId": "1",
+				"Scope": "Device"
+			},
+			"Status": {
+				"Code": 0,
+				"Reason": "",
+				"UserMessage": ""
+			},
+			"Timestamp": "2019-07-08T11:02:46+12:00"
+		}
+	},
+	"Device": {
+		"Body": {
+			"Data": {
+				"PAC": {
+					"Unit": "W",
+					"Values": {
+						"0": 4330,
+						"1": 3721
+					}
+				},
+				"DAY_ENERGY": {
+					"Unit": "Wh",
+					"Values": {
+						"0": 6366,
+						"1": 6000
+					}
+				},
+				"YEAR_ENERGY": {
+					"Unit": "Wh",
+					"Values": {
+						"0": 1041607,
+						"1": 42000
+					}
+				},
+				"TOTAL_ENERGY": {
+					"Unit": "Wh",
+					"Values": {
+						"0": 3551131,
+						"1": 43000
+					}
+				}
+			}
+		},
+		"Head": {
+			"RequestArguments": {
 
-      },
-      "Status":{
-         "Code":0,
-         "Reason":"",
-         "UserMessage":""
-      },
-      "Timestamp":"2019-07-07T17:03:59+10:00"
-   }
+			},
+			"Status": {
+				"Code": 0,
+				"Reason": "",
+				"UserMessage": ""
+			},
+			"Timestamp": "2019-07-07T17:03:59+10:00"
+		}
+	}
 }
