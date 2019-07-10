@@ -15,7 +15,8 @@ from homeassistant.const import (
 from homeassistant.helpers.entity import Entity
 from homeassistant.util import Throttle
 
-_INVERTERRT = 'http://{}/solar_api/v1/GetInverterRealtimeData.cgi?Scope={}&DeviceId={}&DataCollection=CommonInverterData'
+#_INVERTERRT = 'http://{}/solar_api/v1/GetInverterRealtimeData.cgi?Scope={}&DeviceId={}&DataCollection=CommonInverterData'
+_INVERTERRT = 'http://{}?Scope={}&DeviceId={}&DataCollection=CommonInverterData'
 _LOGGER = logging.getLogger(__name__)
 
 ATTRIBUTION = "Fronius Inverter Data"
@@ -78,11 +79,8 @@ def setup_platform(hass, config, add_entities, discovery_info=None):
         return
 
     dev = []
-    if scope == 'System':
-        for variable in _SENSOR_TYPES_SYSTEM:
-            dev.append(FroniusSensor(fronius_data, name, variable, scope, device_id))
-    else:
-        for variable in config[CONF_MONITORED_CONDITIONS]:
+    for variable in config[CONF_MONITORED_CONDITIONS]:
+        if SENSOR_TYPES[variable][0] in fronius_data.latest_data:
             dev.append(FroniusSensor(fronius_data, name, variable, scope, device_id))
 
     add_entities(dev, True)
@@ -139,22 +137,19 @@ class FroniusSensor(Entity):
 
         total = 0
 
-        if self._scope == 'System':
-            if self._json_key not in self._data.latest_data:
-                return
-            else:
-                for item in self._data.latest_data[self._json_key]['Values']:
-                    total = total + self._data.latest_data[self._json_key]['Values'][item]
-                if self._unit == "kWh":
-                    self._state = round(total / 1000, 1)
-                else:
-                    self._state = round(total, 1)
-        else:
+        if self._scope == 'Device':
             # Read data
             if self._unit == "kWh":
                 self._state = round(self._data.latest_data[self._json_key]['Value'] / 1000, 1)
             else:
                 self._state = round(self._data.latest_data[self._json_key]['Value'], 1)
+        elif self._scope == 'System':
+            for item in self._data.latest_data[self._json_key]['Values']:
+                total = total + self._data.latest_data[self._json_key]['Values'][item]
+            if self._unit == "kWh":
+                self._state = round(total / 1000, 1)
+            else:
+                self._state = round(total, 1)
 
 
 class FroniusData:
