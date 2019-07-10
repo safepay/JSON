@@ -1,5 +1,5 @@
 {
-	"System": {
+	"Device": {
 		"Body": {
 			"Data": {
 				"DAY_ENERGY": {
@@ -63,7 +63,7 @@
 			"Timestamp": "2019-07-08T11:02:46+12:00"
 		}
 	},
-	"Device": {
+	"System": {
 		"Body": {
 			"Data": {
 				"PAC": {
