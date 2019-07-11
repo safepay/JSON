@@ -74,7 +74,7 @@ def setup_platform(hass, config, add_entities, discovery_info=None):
     try:
         fronius_data.update()
     except ValueError as err:
-        _LOGGER.error("Received error from inverter: %s", err)
+        _LOGGER.error("Received error from Fronius inverter: %s", err)
         return
 
     dev = []
@@ -134,8 +134,6 @@ class FroniusSensor(Entity):
             _LOGGER.info("Didn't receive data from the inverter")
             return
 
-        total = 0
-
         if self._scope == 'Device':
             # Read data
             if self._unit == "kWh":
@@ -143,13 +141,13 @@ class FroniusSensor(Entity):
             else:
                 self._state = round(self._data.latest_data[self._json_key]['Value'], 1)
         elif self._scope == 'System':
+            total = 0
             for item in self._data.latest_data[self._json_key]['Values']:
                 total = total + self._data.latest_data[self._json_key]['Values'][item]
             if self._unit == "kWh":
                 self._state = round(total / 1000, 1)
             else:
                 self._state = round(total, 1)
-
 
 class FroniusData:
     """Handle Fronius API object and limit updates."""
@@ -163,7 +161,7 @@ class FroniusData:
     def _build_url(self):
         """Build the URL for the requests."""
         url = _INVERTERRT.format(self._ip_address, self._scope, self._device_id)
-        _LOGGER.info("Fronius URL: %s", url)
+        _LOGGER.debug("Fronius URL: %s", url)
         return url
 
     @property
@@ -180,5 +178,7 @@ class FroniusData:
             result = requests.get(self._build_url(), timeout=10).json()
             self._data = result['Body']['Data']
             return
-        except KeyError:
-            _LOGGER.error("*** Error getting Fronius data")
+        except KeyError as error:
+            _LOGGER.error("*** Failed getting key from Fronius data: %s", error)
+        except Timeout as error:
+            _LOGGER.error("*** Timed out getting Fronius data: %s", error)
