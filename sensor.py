@@ -42,14 +42,6 @@ SENSOR_TYPES = {
     'total_energy': ['TOTAL_ENERGY', 'Total Energy', 'kWh', 'mdi:solar-power']
 }
 
-_SENSOR_TYPES_SYSTEM = {
-    'ac_power': ['PAC', 'AC Power', 'W', 'mdi:solar-power'],
-    'day_energy': ['DAY_ENERGY', 'Day Energy', 'kWh', 'mdi:solar-power'],
-    'year_energy': ['YEAR_ENERGY', 'Year Energy', 'kWh', 'mdi:solar-power'],
-    'total_energy': ['TOTAL_ENERGY', 'Total Energy', 'kWh', 'mdi:solar-power']
-}
-
-
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
     vol.Required(CONF_IP_ADDRESS): cv.string,
     vol.Optional(CONF_DEVICE_ID, default='1'): cv.string,
@@ -59,7 +51,6 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
     vol.Required(CONF_MONITORED_CONDITIONS, default=list(SENSOR_TYPES)):
         vol.All(cv.ensure_list, [vol.In(SENSOR_TYPES)]),
 })
-
 
 def setup_platform(hass, config, add_entities, discovery_info=None):
     """Set up the Fronius inverter sensor."""
