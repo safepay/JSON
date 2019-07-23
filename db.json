@@ -1,5 +1,5 @@
 {
-	"PowerFlow": {
+	"XXXPowerFlow": {
 	   "Body" : {
 	      "Data" : {
 		 "Inverters" : {
@@ -37,7 +37,7 @@
 	      "Timestamp" : "2019-07-07T17:03:59+10:00"
 	   }
 	},
-	"XXXDevice": {
+	"Device": {
 		"Body": {
 			"Data": {
 				"DAY_ENERGY": {
