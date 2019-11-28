@@ -161,5 +161,12 @@
 		},
 		"roomId": 11,
 		"type": 8
+	},
+	"Room": {
+	    "colorId": 15,
+	    "iconId": 10,
+	    "id": 11,
+	    "name": "Um9vbSBuYW1l",
+	    "order": 0
 	}
 }
